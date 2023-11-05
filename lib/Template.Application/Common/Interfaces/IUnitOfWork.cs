@@ -1,6 +1,6 @@
 ﻿namespace Template.Application.Common.Interfaces;
 
-public interface IApplicationDbContext
+public interface IUnitOfWork
 {
     public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

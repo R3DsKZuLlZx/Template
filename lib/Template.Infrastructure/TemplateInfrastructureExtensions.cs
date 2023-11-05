@@ -7,7 +7,9 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Quartz;
 using Template.Application;
 using Template.Application.Common.Interfaces;
+using Template.Application.Customers;
 using Template.Infrastructure.Database;
+using Template.Infrastructure.Database.Repositories;
 using Template.Infrastructure.FileStorage;
 using Template.Infrastructure.Jobs;
 
@@ -24,8 +26,6 @@ public static class TemplateInfrastructureExtensions
             options.UseSqlServer(configuration.GetConnectionString(nameof(ApplicationDbContext)));
         });
 
-        serviceCollection.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
-        
         serviceCollection.ConfigureSingletonOption<FileStorageOptions>(configuration, nameof(FileStorageOptions));
 
         serviceCollection.AddScoped<IFileRepository, FileRepository>(provider =>
@@ -58,6 +58,9 @@ public static class TemplateInfrastructureExtensions
         serviceCollection.AddQuartzJobs(Assembly.GetExecutingAssembly());
 
         serviceCollection.AddHealthChecks().AddCustomHealthChecks(Assembly.GetExecutingAssembly());
+
+        serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
+        serviceCollection.AddScoped<ICustomerRepository, CustomerRepository>();
         
         return serviceCollection;
     }

@@ -9,7 +9,7 @@
     }
   },
   "ConnectionStrings": {
-    "ApplicationDbContext": "Server=(localdb)\\mssqlocaldb;Database=TemplateDb;Trusted_Connection=True;"
+    "ApplicationDbContext": "Server=(LocalDb)\\MSSQLLocalDB;Database=TemplateDb;Trusted_Connection=True;"
   },
   "AllowedHosts": "*"
 }

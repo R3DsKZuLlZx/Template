@@ -1,3 +1,4 @@
+using Carter;
 using Serilog;
 using Template.Application;
 using Template.Infrastructure;
@@ -29,6 +30,7 @@ builder.Services.AddTemplateInfrastructure(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCarter();
 
 var app = builder.Build();
 
@@ -41,6 +43,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapCarter();
 
 app.MapHealthChecks("/api/health");
 

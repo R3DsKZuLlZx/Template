@@ -1,0 +1,15 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "R3DsKZuLlZx",
+  "classifications": ["Web"],
+  "name": "My dotnet template",
+  "description": "A simple dotnet template.",
+  "identity": "Template.Solution",
+  "shortName": "tpl-sln",
+  "sourceName": "Template",
+  "tags": {
+    "language": "c#",
+    "type": "solution"
+  },
+  "preferNameDirectory": true
+}

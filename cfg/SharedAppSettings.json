@@ -1,0 +1,15 @@
+{
+  "FileStorageOptions": {
+    "FolderPath": "test"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "ApplicationDbContext": "Server=(localdb)\\mssqlocaldb;Database=TemplateDb;Trusted_Connection=True;"
+  },
+  "AllowedHosts": "*"
+}

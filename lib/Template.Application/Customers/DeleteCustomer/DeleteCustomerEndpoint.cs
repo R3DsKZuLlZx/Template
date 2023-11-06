@@ -13,7 +13,7 @@ public class DeleteCustomerEndpoint : ICarterModule
     {
         app.MapDelete(
             "/customers/{id}", 
-            async ([FromServices] ISender sender, [FromQuery] Guid id) =>
+            async ([FromServices] ISender sender, Guid id) =>
             {
                 var command = new DeleteCustomerCommand
                 {

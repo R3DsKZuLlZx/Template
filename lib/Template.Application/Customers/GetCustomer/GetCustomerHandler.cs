@@ -4,7 +4,7 @@ using Template.Application.Customers.Common;
 
 namespace Template.Application.Customers.GetCustomer;
 
-public class GetCustomerHandler : IRequestHandler<GetCustomerQuery, Result<Customer>>
+public sealed class GetCustomerHandler : IRequestHandler<GetCustomerQuery, Result<Customer>>
 {
     private readonly ICustomerRepository _customerRepository;
 

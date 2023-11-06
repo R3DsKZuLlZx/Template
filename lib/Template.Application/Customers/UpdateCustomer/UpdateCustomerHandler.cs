@@ -5,7 +5,7 @@ using Template.Application.Customers.Common;
 
 namespace Template.Application.Customers.UpdateCustomer;
 
-public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, Result<Customer>>
+public sealed class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, Result<Customer>>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IUnitOfWork _unitOfWork;

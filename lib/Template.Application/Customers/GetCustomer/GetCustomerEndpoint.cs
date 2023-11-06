@@ -13,7 +13,7 @@ public class GetCustomerEndpoint : ICarterModule
     {
         app.MapGet(
             "/customers/{id}",
-            async ([FromServices] ISender sender, [FromQuery] Guid id) =>
+            async ([FromServices] ISender sender, Guid id) =>
             {
                 var query = new GetCustomerQuery
                 {

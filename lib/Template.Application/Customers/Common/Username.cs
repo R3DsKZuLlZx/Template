@@ -8,7 +8,7 @@ namespace Template.Application.Customers.Common;
 public class Username : ValueOf<string, Username>
 {
     private static readonly Regex UsernameRegex =
-        new("^[a-z\\d](?:[a-z\\d]|-(?=[a-z\\d])){0,38}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        new("^(?=.{1,30}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     protected override void Validate()
     {

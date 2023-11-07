@@ -11,5 +11,19 @@
     "language": "c#",
     "type": "solution"
   },
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/.idea/**",
+        "**/.git/**"
+      ]
+    }
+  ]
 }
